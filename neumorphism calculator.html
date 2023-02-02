@@ -1,0 +1,169 @@
+<html>
+<head>
+<meta name="viewport"content="width=device-width">
+<style type="text/css">
+body{
+background:#cbced1;
+}
+.calc{
+height:540px;
+width:310px;
+background:#ecf0f3;
+box-shadow:5px 5px 2px #cbced1,
+-5px -5px 5px #fff;
+margin:auto;
+border-radius:2rem;
+}
+.calc .dis{
+width:280px;
+height:50px;
+margin-top:0px;
+margin-left:7px;
+border-radius:30px;
+background:#ecf0f3;
+outline:none;
+border:none;
+font-size:20px;
+padding-left:20px;
+box-shadow:inset 5px 5px 0px #cbced1,
+inset -5px -5px 1px #fff;
+}
+h3{
+display:grid;
+margin-top:50px;
+text-align:center;
+padding-top:20px;
+color:black;
+}
+.first{
+margin-top:20px;
+}
+.row{
+width:60px;
+height:60px;
+background:;
+margin-left:10px;
+border-radius:50%;
+border:none;
+box-shadow:5px 5px 5px #cbced1,
+-5px -5px 8px #fff;
+}
+.row:focus{
+box-shadow:inset 5px 5px 2px #cbced1,
+inset -5px -5px 2px #fff;
+}
+.rows:focus{
+box-shadow:inset 5px 5px 2px #cbced1,
+inset -5px -5px 2px #fff;
+}
+.rows{
+width:60px;
+height:60px;
+background:;
+margin-left:10px;
+border-radius:50%;
+border:none;
+box-shadow:5px 5px 5px #cbced1,
+-5px -5px 8px #fff;
+}
+@media (min-width:500px)
+{
+body{
+background:black;
+}
+.calc{
+height:350px;
+width:60%;
+background:linear-gradient(315deg,cyan,black,purple);
+border-radius:2rem;
+}
+.calc .dis{
+width:400px;
+height:30px;
+margin-left:7px;
+border-radius:30px;
+border:none;
+font-size:20px;
+padding-left:20px;
+box-shadow:inset -4px -4px 10px white,
+           inset -4px -5px 10px rgba(0,0,0,0.16);
+}
+h3{
+text-align:center;
+color:red;
+}
+.first{
+margin-top:4px;
+}
+.row{
+width:50px;
+height:40px;
+background:pink;
+margin-left:40px;
+}
+.rows{
+width:50px;
+height:40px;
+background:black;
+margin-left:40px;
+border-radius:50%;
+border:2px solid red;
+}
+</style>
+</head>
+<body>
+<div class="calc">
+<div>
+<h3>MODERN CALCULATOR</h3>
+<input type="text" class="dis"name="dis"readonly>
+<div class="first">
+<button class="row"onclick="buttons('1');">1</button>
+<button class="row" value="2"onclick="buttons('2')">2</button>
+<button class="row"value="3"onclick="buttons('3')">3</button>
+<button class="rows"onclick="buttons('*');">*</button>
+</div>
+<div class="first">
+<button class="row"onclick="buttons('4')">4</button>
+<button class="row"onclick="buttons('5')">5</button>
+<button class="row"onclick="buttons('6')">6</button>
+<button class="rows"onclick="buttons('/')">/</button>
+</div>
+<div class="first">
+<button class="row"onclick="buttons('7')">7</button>
+<button class="row"onclick="buttons('8')">8</button>
+<button class="row"onclick="buttons('9')">9</button>
+<button class="rows"onclick="buttons('-')">-</button>
+</div>
+<div class="first">
+<button class="row"onclick="buttons('.')">.</button>
+<button class="row"onclick="buttons('0')">0</button>
+<button class="row"onclick="buttons('00')">00</button>
+<button class="rows"onclick="buttons('+')">+</button>
+</div>
+<div class="first">
+<button class="rows" onclick="del()">C</button>
+<button class="rows" onclick="clr()">clear</button>
+<button class="rows"onclick="buttons('%')">%</button>
+<button class="rows"onclick="calculate()">=</button>
+</div>
+</div>
+<script type="text/javascript">
+var di=document.querySelector(".dis");
+function buttons(a){
+var oldinput=di.value;
+var newinput=oldinput+a;
+di.value=newinput;
+}
+function calculate(){
+var input=di.value;
+di.value=eval(input)
+}
+function clr(){
+di.value="";
+}
+function del(){
+di.value=di.value.slice(0,-1);
+}
+</script>
+</body>
+</html>
